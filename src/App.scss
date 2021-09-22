@@ -1,23 +1,74 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #333;
+  --accent-color: hsl(39, 86%, 52%);
+  --fc-title: hsl(39, 77%, 83%);
+  --ff: Verdana, Geneva, Tahoma, sans-serif;
+  --fs-title: clamp(1.8rem, 7vw, 4.5rem);
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: #333;
-  color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-height: 100vh;
+  position: relative;
+  font-family: var(--ff);
+  background: var(--primary-color) url("./images/logo.svg") no-repeat
+    center/cover;
+  padding: 0 2rem;
+  @apply flex justify-center items-center;
 
-  > div {
-    border: 4px solid gray;
-    border-radius: 10px;
-    padding: 2rem;
-    transform: rotate(3deg);
+  #root {
+    width: 100%;
+    @apply flex justify-center items-center;
+
+    > div {
+      width: 100%;
+      padding: 0.8rem 0 1.3rem 0;
+      border-radius: 20px;
+      background-color: rgba(0, 0, 0, 0.2);
+      @apply text-center;
+
+      > h1 {
+        color: var(--fc-title);
+        font-size: var(--fs-title);
+      }
+
+      > p {
+        color: var(--accent-color);
+        @apply italic text-base;
+      }
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: var(--fc-title);
+    margin-bottom: 2rem;
+
+    > p {
+      margin: auto;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      width: 70%;
+    }
+
+    > a {
+      color: rgb(172, 105, 235);
+      border: 2px solid rgb(172, 105, 235);
+      border-radius: 20px;
+      padding: 0.5rem 0.8rem;
+      font-weight: 700;
+      transition: 0.2s;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
   }
 }
