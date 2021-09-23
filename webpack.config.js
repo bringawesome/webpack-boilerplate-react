@@ -10,7 +10,7 @@ module.exports = {
     path: path.join(__dirname, bundleFolder),
     filename: "index.bundle.js",
     clean: true,
-    assetModuleFilename: "images/[hash][ext][query]", // This is to extract all the images in an images directory***
+    assetModuleFilename: "assets/[hash][ext][query]", // This is to extract all the images and fonts in an assets directory***
   },
   devServer: {
     port: PORT,
@@ -27,6 +27,10 @@ module.exports = {
         },
       },
       {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: "asset/resource", // remove resource for automatic webpack decide to create base64 encoded images <-- for small images, less than 8 KB***
       },
@@ -35,7 +39,7 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { publicPath: "" }, // With this option, webpack can adjust the URL of the images in Css/Scss***
+            options: { publicPath: "" }, // With this option, webpack can adjust the url() of the images in Css/Scss in the output file***
           },
           {
             loader: "css-loader",

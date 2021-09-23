@@ -18,7 +18,10 @@ function App() {
           Basic starter project for building React apps with Webpack / Babel /
           Postcss / Sass / Tailwind
         </p>
-        <a href="https://github.com/toniG-78/react-webpack-boilerplate-project.git" target="_blank">
+        <a
+          href="https://github.com/toniG-78/react-webpack-boilerplate-project.git"
+          target="_blank"
+        >
           Download Repository
         </a>
       </div>
