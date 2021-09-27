@@ -1,9 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* @font-face */
-
+/* FONTS */
 @font-face {
   font-family: "Ubuntu_Reg";
   src: url("./fonts//Ubuntu//Ubuntu-Regular.ttf");
@@ -24,18 +19,15 @@ body {
   background: var(--primary-color) url("./images/logo.svg") no-repeat
     center/cover;
   padding: 0 2rem;
-  @apply flex justify-center items-center;
 
   #root {
     width: 100%;
-    @apply flex justify-center items-center;
 
     > div {
       width: 100%;
       padding: 0.8rem 0 1.3rem 0;
       border-radius: 20px;
       background-color: rgba(0, 0, 0, 0.2);
-      @apply text-center;
 
       > h1 {
         color: var(--fc-title);
@@ -44,7 +36,6 @@ body {
 
       > p {
         color: var(--accent-color);
-        @apply italic text-base;
       }
     }
   }

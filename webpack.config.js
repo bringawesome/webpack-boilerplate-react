@@ -10,13 +10,13 @@ module.exports = {
     path: path.join(__dirname, bundleFolder),
     filename: "index.bundle.js",
     clean: true,
-    assetModuleFilename: "assets/[hash][ext][query]", // This is to extract all the images and fonts in an assets directory***
+    assetModuleFilename: "assets/[hash][ext][query]", // Extract all the images and fonts in an assets/ directory***
   },
   devServer: {
     port: PORT,
     hot: true, // hotreloading***
   },
-  devtool: "source-map", // Debugging original css / scss files in the browser***
+  devtool: "source-map", // Debugging original CSS/SCSS files in the browser***
   module: {
     rules: [
       {
@@ -32,14 +32,14 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        type: "asset/resource", // remove resource for automatic webpack decide to create base64 encoded images <-- for small images, less than 8 KB***
+        type: "asset/resource", // Remove <resource> if you want to webpack decide to create inline base64 encoded for small images, less than 8 KB***
       },
       {
         test: /\.s?css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { publicPath: "" }, // With this option, webpack can adjust the url() of the images in Css/Scss in the output file***
+            options: { publicPath: "" }, // With this option, webpack can adjust the url("") path of the images in the CSS output file***
           },
           {
             loader: "css-loader",
@@ -57,16 +57,18 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: [".js", ".jsx"], // You will not need to type the file extension when importing jsx or js files***
+    extensions: [".js", ".jsx"], // With this you will not need to type the file extension when importing jsx or js files***
   },
 };
 
 /*
- * I am not using HtmlWebpackPlugin but I am using file-loader to keep
- * track of <index.html> and put this line of code in <index.js>
+ * I am not using <HtmlWebpackPlugin> but <file-loader> to keep
+ * track of <index.html>
+ * To do that i added this line of code:
  * require("file-loader?name=[name].[ext]!./index.html");
+ * in the <index.js> file
  * 
- * Using the plugin:
+ * If you want to use the plugin:
  plugins: [
     new MiniCssExtractPlugin({
       filename: "main.bundle.css",
