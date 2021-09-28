@@ -58,7 +58,7 @@ npm run clean
 
 - All your assets are moved to an `assets/` folder.
 
-- Go to `webpack.config.js` and configure which icons / metadata will be generated, refer to [favicons]("https://github.com/jantimon/favicons-webpack-plugin") and [favicons-webpack-plugin]("https://github.com/jantimon/favicons-webpack-plugin") documentation.
+- Go to `webpack.config.js` and configure which icons / metadata will be generated, refer to [favicons](https://github.com/jantimon/favicons-webpack-plugin) and [favicons-webpack-plugin](https://github.com/jantimon/favicons-webpack-plugin) documentation.
 
 - Go to the terminal and run `npm run dev-build` it will output the JavaScript and CSS bundle in a more readable format for development or debugging.
 
