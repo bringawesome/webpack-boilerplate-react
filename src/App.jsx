@@ -22,33 +22,31 @@ function App() {
   return (
     <div className="container">
       <main>
-        <h1>
-          React - Webpack <br /> Boilerplate
-        </h1>
+        <h1>React - Webpack Boilerplate</h1>
         <div className="logos">
           <Logo
             title="react"
             link="https://it.reactjs.org/"
             src={React_Logo}
-            width="36"
+            width="35"
           />
           <Logo
             title="webpack"
             link="https://webpack.js.org/"
             src={Webpack}
-            width="43"
+            width="40"
           />
           <Logo
             title="babel"
             link="https://babeljs.io/"
             src={Babel}
-            width="60"
+            width="50"
           />
           <Logo
             title="sass"
             link="https://sass-lang.com/"
             src={SASS}
-            width="50"
+            width="40"
           />
           <Logo
             title="postcss"
