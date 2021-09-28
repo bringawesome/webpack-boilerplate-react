@@ -1,0 +1,187 @@
+/* FONTS */
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./fonts//Ubuntu//Ubuntu-Medium.ttf");
+}
+
+/* VARIABLES */
+:root {
+  /* colors */
+  --primary-color: hsl(0, 0%, 20%);
+  --secondary-color: hsl(39, 86%, 52%);
+  --title-color: hsl(39, 77%, 83%);
+  --btn-color: hsl(271, 76%, 67%);
+  --light-gray: hsl(0, 5%, 71%);
+  /* fonts */
+  --ff: "Ubuntu";
+  --title-size: clamp(1.8rem, 7vw, 4.5rem);
+}
+
+/* MIXINS */
+
+//BREAKPOINTS - 640px, 1024px, 1400px
+$breakpoints-up: (
+  "medium": "40em",
+  "large": "64em",
+  "xlarge": "87.5em",
+);
+
+//BREAKPOINTS - 639px, 1023px, 1399px
+$breakpoints-down: (
+  "small": "39.937em",
+  "medium": "63.937em",
+  "large": "87.437em",
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+/* EXTEND */
+%overlay {
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff);
+  background: var(--primary-color) url("./images/logo.svg") no-repeat
+    center/cover;
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    height: auto;
+  }
+
+  #root {
+    width: 100%;
+    min-height: inherit;
+
+    .container {
+      display: grid;
+      place-content: center;
+      position: relative;
+      width: 90%;
+      max-width: 1200px;
+      min-height: inherit;
+      margin: 0 auto;
+
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+        @extend %overlay;
+
+        h1 {
+          color: var(--title-color);
+          font-size: var(--title-size);
+        }
+
+        p {
+          width: 60%;
+          font-size: 1.1rem;
+          letter-spacing: 0.8px;
+          color: var(--secondary-color);
+        }
+
+        h1,
+        p,
+        .logos {
+          text-align: center;
+          margin-bottom: 2.5rem;
+        }
+
+        .logos {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 4.5rem;
+
+          .logo {
+            transition: 0.28s;
+
+            &:hover,
+            &:focus {
+              transform: scale(1.2);
+            }
+          }
+
+          .postcss {
+            position: relative;
+            top: -8px;
+          }
+        }
+
+        .btn {
+          padding: 0.5rem 1.5rem;
+          margin-bottom: 1rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: var(--btn-color);
+          background-color: none;
+          border: 3px solid;
+          border-radius: 20px;
+          transition: 0.2s;
+
+          &:hover,
+          &:focus {
+            color: var(--primary-color);
+            background-color: var(--btn-color);
+            border-color: var(--btn-color);
+          }
+        }
+      }
+
+      time {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 2rem;
+        padding: 0.5rem 0.8rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.6rem;
+        color: var(--light-gray);
+        @extend %overlay;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.2rem;
+        text-align: center;
+
+        > p {
+          margin: auto;
+          color: var(--light-gray);
+          font-size: 0.95rem;
+          width: 70%;
+        }
+      }
+    }
+  }
+}

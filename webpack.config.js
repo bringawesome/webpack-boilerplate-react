@@ -1,5 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 const PORT = 3000;
 const bundleFolder = "/dist";
@@ -55,6 +56,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "main.bundle.css",
     }),
+    new FaviconsWebpackPlugin(__dirname + "/favicon.ico"),
   ],
   resolve: {
     extensions: [".js", ".jsx"], // With this you will not need to type the file extension when importing jsx or js files***
