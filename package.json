@@ -1,7 +1,7 @@
 {
   "name": "react-webpack-boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "Basic starter project for building React apps with Webpack / Babel / SASS / Postcss",
   "main": "index.js",
   "scripts": {
     "serve": "webpack serve --mode development",

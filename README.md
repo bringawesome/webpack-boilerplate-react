@@ -48,12 +48,17 @@ npm run clean
 - Debug your original CSS/SCSS files in the browser.
 - In production mode the output CSS is moved to a separate file.
 - In production mode the assets (images, fonts) are moved to a separate folder.
+- Generate favicons and their associated files.
 
 ## Notes:
 
-- The CSS output file is included in the header of the index.html.
+- The CSS output file is included in the header of the `index.html`
 
-- The JavaScript output file is included in the body of the index.html.
+- The JavaScript output file is included in the body of the `index.html`
+
+- All your assets are moved to an `assets/` folder.
+
+- Go to `webpack.config.js` and configure which icons / metadata will be generated, refer to [favicons]("https://github.com/jantimon/favicons-webpack-plugin") and [favicons-webpack-plugin]("https://github.com/jantimon/favicons-webpack-plugin") documentation.
 
 - Go to the terminal and run `npm run dev-build` it will output the JavaScript and CSS bundle in a more readable format for development or debugging.
 
