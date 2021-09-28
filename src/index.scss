@@ -2,6 +2,7 @@
 @font-face {
   font-family: "Ubuntu";
   src: url("./fonts//Ubuntu//Ubuntu-Medium.ttf");
+  font-display: swap;
 }
 
 /* VARIABLES */
@@ -14,7 +15,7 @@
   --light-gray: hsl(0, 5%, 71%);
   /* fonts */
   --ff: "Ubuntu";
-  --title-size: clamp(1.8rem, 7vw, 4.5rem);
+  --title-size: clamp(1.8rem, 7vw, 3.5rem);
 }
 
 /* MIXINS */
