@@ -56,7 +56,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "main.bundle.css",
     }),
-    new FaviconsWebpackPlugin(__dirname + "/favicon.ico"),
+    new FaviconsWebpackPlugin(__dirname + "/favicon.png"),
   ],
   resolve: {
     extensions: [".js", ".jsx"], // With this you will not need to type the file extension when importing jsx or js files***
