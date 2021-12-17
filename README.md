@@ -5,7 +5,7 @@ Basic starter project for building React apps with Webpack / Babel / Postcss (pl
 ### Clone the project
 
 ```bash
-git clone https://github.com/toniG-78/react-webpack-boilerplate-project.git
+git clone https://github.com/google-fan/webpack-boilerplate-react.git
 ```
 
 ### Install dependencies
